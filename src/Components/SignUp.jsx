@@ -33,7 +33,7 @@ const Signup = () => {
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[10px] mx-3 h-[40px] flex justify-center">
           <MdOutlinePersonPinCircle className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 pl-1 text-[#333] text-sm transition-all duration-[200ms] ease-in-out"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="text"
             placeholder="Create a username"
             required
@@ -42,7 +42,7 @@ const Signup = () => {
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[10px] mx-3 h-[40px] flex justify-center">
           <MdOutlineMail className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 pl-1 text-[#333] text-sm transition-all duration-[200ms] ease-in-out"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="email"
             placeholder="Enter your email"
             required
@@ -51,7 +51,7 @@ const Signup = () => {
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[10px] mx-3 h-[40px] flex justify-center">
           <MdOutlineLock className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 pl-1 text-[#333] text-sm transition-all duration-[200ms] ease-in-out"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="password"
             placeholder="Create a password"
             required
@@ -60,7 +60,7 @@ const Signup = () => {
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[10px] mx-3 h-[40px] flex justify-center">
           <MdOutlineLock className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 pl-1 text-[#333] text-sm transition-all duration-[200ms] ease-in-out"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="password"
             placeholder="Confirm password"
             required

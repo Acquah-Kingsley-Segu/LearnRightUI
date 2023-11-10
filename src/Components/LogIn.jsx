@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MdClose, MdOutlineLock, MdOutlineMail } from "react-icons/md";
+import { BiUserCircle } from "react-icons/bi";
+import { MdClose, MdOutlineLock } from "react-icons/md";
 import ReactModal from "react-modal";
 import { NavLink, useNavigate } from "react-router-dom";
 import LoginAPIObject from "../api/LoginApi";
@@ -53,9 +54,9 @@ const Login = () => {
         className="flex-1 flex flex-col"
       >
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[30px] mx-3 h-[40px] flex justify-center">
-          <MdOutlineMail className="h-full text-[#333] text-2xl" />
+          <BiUserCircle className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out border-b-[1.5px] border-solid border-[#aaaaaa]"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="text"
             placeholder="Enter your username"
             name="username"
@@ -65,7 +66,7 @@ const Login = () => {
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[15px] mx-3 h-[40px] flex justify-center">
           <MdOutlineLock className="h-full text-[#333] text-2xl" />
           <input
-            className="w-full h-full outline-none py-0 pl-1 text-[#333] text-sm transition-all duration-[200ms] ease-in-out"
+            className="w-full h-full outline-none border-0 py-0 px-[30px] text-[#333] transition-all duration-[200ms] ease-in-out "
             type="password"
             placeholder="Enter your password"
             name="password"
