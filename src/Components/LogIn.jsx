@@ -3,31 +3,26 @@ import { BiUserCircle } from "react-icons/bi";
 import { MdClose, MdOutlineLock } from "react-icons/md";
 import ReactModal from "react-modal";
 import { NavLink, useNavigate } from "react-router-dom";
-import LoginAPIObject from "../api/LoginApi";
+import AuthAPIObject from "../api/AuthAPI";
 
 const Login = () => {
   const [openModal, setOpenModal] = useState(true);
-  const [loginCredentials, setLogInCredentials] = useState({});
 
   const navigate = useNavigate();
 
   const loginHandler = (event) => {
     event.preventDefault();
-    setLogInCredentials({
-      username: event.target.username.value,
-      password: event.target.password.value,
+
+    const login_data = new FormData();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    login_data.append("username", username);
+    login_data.append("password", password);
+
+    AuthAPIObject.login(login_data).then((res) => {
+      console.log(res.data);
     });
-    LoginAPIObject.login(loginCredentials)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("token", res.data.access);
-        localStorage.setItem("user_id", parseInt(res.data.user_id));
-        localStorage.setItem("username", res.data.username);
-        localStorage.setItem("email", res.data.email);
-        if (res.data) navigate("/dashboard");
-        else navigate("/login");
-      })
-      .catch((err) => console.log(err));
   };
 
   return (
@@ -61,6 +56,7 @@ const Login = () => {
             placeholder="Enter your username"
             name="username"
             required
+            id="username"
           />
         </div>
         <div className="border-b-[1.5px] border-solid border-[#aaaaaa] relative mt-[15px] mx-3 h-[40px] flex justify-center">
@@ -71,6 +67,7 @@ const Login = () => {
             placeholder="Enter your password"
             name="password"
             required
+            id="password"
           />
         </div>
         <div className="mt-[14px] bg-greeen-200 mx-3 flex items-center justify-between">
