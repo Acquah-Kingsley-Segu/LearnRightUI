@@ -4,6 +4,7 @@ import { MdClose, MdOutlineLock } from "react-icons/md";
 import ReactModal from "react-modal";
 import { NavLink, useNavigate } from "react-router-dom";
 import AuthAPIObject from "../api/AuthAPI";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [openModal, setOpenModal] = useState(true);
@@ -21,7 +22,8 @@ const Login = () => {
     login_data.append("password", password);
 
     AuthAPIObject.login(login_data).then((res) => {
-      console.log(res.data);
+      if (res.data.status) toast.error(res.data.message);
+      else navigate("/dashboard", { state: { message: res.data.message } });
     });
   };
 
