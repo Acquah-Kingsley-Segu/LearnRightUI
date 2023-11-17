@@ -23,7 +23,13 @@ const Login = () => {
 
     AuthAPIObject.login(login_data).then((res) => {
       if (res.data.status) toast.error(res.data.message);
-      else navigate("/dashboard", { state: { message: res.data.message } });
+      else {
+        localStorage.setItem("token", res.data.user.token);
+        localStorage.setItem("username", res.data.user.username);
+        localStorage.setItem("email", res.data.user.email);
+        console.log(localStorage);
+        navigate("/dashboard", { state: { message: res.data.message } });
+      }
     });
   };
 
