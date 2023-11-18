@@ -4,7 +4,7 @@ import { MdClose, MdOutlineLock } from "react-icons/md";
 import ReactModal from "react-modal";
 import { NavLink, useNavigate } from "react-router-dom";
 import AuthAPIObject from "../api/AuthAPI";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const [openModal, setOpenModal] = useState(true);
@@ -27,7 +27,6 @@ const Login = () => {
         localStorage.setItem("token", res.data.user.token);
         localStorage.setItem("username", res.data.user.username);
         localStorage.setItem("email", res.data.user.email);
-        console.log(localStorage);
         navigate("/dashboard", { state: { message: res.data.message } });
       }
     });
@@ -103,6 +102,7 @@ const Login = () => {
             Signup
           </NavLink>
         </div>
+        <ToastContainer />
       </form>
     </ReactModal>
   );
