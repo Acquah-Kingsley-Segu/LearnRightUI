@@ -37,7 +37,9 @@ const Signup = () => {
       AuthAPIObject.signup(signup_data).then((res) => {
         console.log(res.data);
         if (res.data.error) toast.error(res.data.message);
-        else toast.success(res.data.message);
+        else {
+          toast.success(res.data.message);
+        }
       });
     }
   };

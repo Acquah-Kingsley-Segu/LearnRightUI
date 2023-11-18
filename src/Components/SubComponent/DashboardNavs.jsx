@@ -17,7 +17,7 @@ const DashboardNavs = () => {
   return (
     <aside className="w-1/6 m-1 mr-3 bg-slate-100 flex flex-col border-2 border-solid border-slate-300 rounded-lg">
       <NavLink
-        to={"/dashboard/"}
+        to={"/dashboard"}
         className="flex mt-5 py-3 justify-center items-center"
       >
         <img src={logo} alt="Logo" height={32} width={32} />
@@ -27,7 +27,7 @@ const DashboardNavs = () => {
       <div className="flex flex-col justify-between flex-1">
         <div className="mt-12 flex flex-col pt-5 m-3">
           <NavLink
-            to={"/dashboard/"}
+            to={"/dashboard"}
             className={`flex items-center mb-6 pl-3 py-1 text-zinc-400 hover:cursor-pointer
             hover:text-white hover:bg-violet-700 hover:rounded-full`}
           >
@@ -64,8 +64,11 @@ const DashboardNavs = () => {
             <MdAccountCircle />
           </NavLink>
           <div className="flex flex-col items-center">
-            <p>Username</p>
-            <p>username@gmail.com</p>
+            <p>
+              {localStorage.getItem("username")[0].toUpperCase() +
+                localStorage.getItem("username").slice(1)}
+            </p>
+            <p>{localStorage.getItem("email")}</p>
           </div>
         </div>
       </div>
